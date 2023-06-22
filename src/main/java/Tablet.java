@@ -1,25 +1,42 @@
 import java.util.ArrayList;
+
 public class Tablet extends Dispositivo {
-	private String resolucion;
-	private ArrayList<String> accesorios;
+    private String resolucion;
+    private ArrayList<String> accesorios;
 
-	public String getResolucion() {
-		return this.resolucion;
-	}
+    public Tablet(String marca, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String resolucion) {
+        this.resolucion=resolucion;
+        this.setMarca(marca);
+        this.setRam(ram);
+        this.setAlmacenamiento(almacenamiento);
+        this.setProcesador(procesador);
+        this.setAño(año);
+        this.setPrecio(precio);
+        this.setStock(stock);
+    }
 
-	public void setResolucion(String resolucion) {
-		this.resolucion = resolucion;
-	}
+    public String getResolucion() {
+        return this.resolucion;
+    }
 
-	public ArrayList<String> getAccesorios() {
-		throw new UnsupportedOperationException();
-	}
+    public void setResolucion(String resolucion) {
+        this.resolucion = resolucion;
+    }
 
-	public void setAccesorios(ArrayList<String> accesorios) {
-		throw new UnsupportedOperationException();
-	}
+    public ArrayList<String> getAccesorios() {
+        throw new UnsupportedOperationException();
+    }
 
-	public void verTablaEspecificaciones() {
-		throw new UnsupportedOperationException();
-	}
+    public void setAccesorios(ArrayList<String> accesorios) {
+        throw new UnsupportedOperationException();
+    }
+
+    public void agregarAccesorio(String accesorio) {
+        accesorios.add(accesorio);
+    }
+
+    public void verTablaEspecificaciones() {
+        System.out.println("[Tablet]\nMarca: " + getMarca() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+                + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nResolución: " + getResolucion() + "\nAccesorios: " + getAccesorios());
+    }
 }

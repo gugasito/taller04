@@ -6,6 +6,15 @@ public class Cliente {
 	private String estadoCivil;
 	private String cuidad;
 
+	public Cliente(String nombre, String apellido, String correo, int contacto, String estadoCivil, String cuidad) {
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.correo = correo;
+		this.contacto = contacto;
+		this.estadoCivil = estadoCivil;
+		this.cuidad = cuidad;
+	}
+
 	public String getNombre() {
 		return this.nombre;
 	}

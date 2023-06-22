@@ -8,6 +8,7 @@ public abstract class Dispositivo {
 	private double precio;
 	private int stock;
 
+
 	public String getMarca() {
 		return this.marca;
 	}
