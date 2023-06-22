@@ -5,11 +5,13 @@ public class Computador extends Dispositivo {
     private Pantalla pantalla;
 
 
-    public Computador(String marca, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String gpu, String fuente, String chasis, Pantalla pantalla) {
+    public Computador(String tipo, String marca, String modelo, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String gpu, String fuente, String chasis, Pantalla pantalla) {
         this.gpu = gpu;
         this.fuente = fuente;
         this.chasis = chasis;
         this.pantalla = pantalla;
+        this.setTipo(tipo);
+        this.setModelo(modelo);
         this.setMarca(marca);
         this.setRam(ram);
         this.setAlmacenamiento(almacenamiento);
@@ -47,8 +49,15 @@ public class Computador extends Dispositivo {
         return pantalla;
     }
 
+    @Override
+    public String toString() {
+        return "[Computador]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+                + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nGpu: " + getGpu() + "\nFuente: " + getFuente()
+                + "\nChasis: " + getChasis() + "\nPantalla: " + getPantalla();
+    }
+
     public void verTablaEspecificaciones() {
-        System.out.println("[Computador]\nMarca: " + getMarca() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+        System.out.println("[Computador]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
                 + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nGpu: " + getGpu() + "\nFuente: " + getFuente()
                 + "\nChasis: " + getChasis() + "\nPantalla: " + getPantalla());
     }

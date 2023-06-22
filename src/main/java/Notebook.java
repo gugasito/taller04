@@ -4,11 +4,13 @@ public class Notebook extends Dispositivo {
     private int bateria;
 
 
-    public Notebook(String marca, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String resolucion, String tipoTeclado, int bateria) {
-        this.resolucion=resolucion;
-        this.tipoTeclado=tipoTeclado;
-        this.bateria=bateria;
+    public Notebook(String tipo, String marca, String modelo, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String resolucion, String tipoTeclado, int bateria) {
+        this.resolucion = resolucion;
+        this.tipoTeclado = tipoTeclado;
+        this.bateria = bateria;
+        this.setTipo(tipo);
         this.setMarca(marca);
+        this.setModelo(modelo);
         this.setRam(ram);
         this.setAlmacenamiento(almacenamiento);
         this.setProcesador(procesador);
@@ -42,8 +44,15 @@ public class Notebook extends Dispositivo {
     }
 
     public void verTablaEspecificaciones() {
-        System.out.println("[Notebook]\nMarca: " + getMarca() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+        System.out.println("[Notebook]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
                 + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nResolucion: " + getResolucion() + "\nTipo de teclado: " +
                 getTipoTeclado() + "\nBatería: " + getBateria());
+    }
+
+    @Override
+    public String toString() {
+        return "[Notebook]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+                + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nResolucion: " + getResolucion() + "\nTipo de teclado: " +
+                getTipoTeclado() + "\nBatería: " + getBateria();
     }
 }

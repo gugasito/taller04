@@ -4,8 +4,10 @@ public class Tablet extends Dispositivo {
     private String resolucion;
     private ArrayList<String> accesorios;
 
-    public Tablet(String marca, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String resolucion) {
-        this.resolucion=resolucion;
+    public Tablet(String marca,String tipo , String modelo, double ram, double almacenamiento, String procesador, int año, double precio, int stock, String resolucion) {
+        this.resolucion = resolucion;
+        this.setTipo(tipo);
+        this.setModelo(modelo);
         this.setMarca(marca);
         this.setRam(ram);
         this.setAlmacenamiento(almacenamiento);
@@ -36,7 +38,13 @@ public class Tablet extends Dispositivo {
     }
 
     public void verTablaEspecificaciones() {
-        System.out.println("[Tablet]\nMarca: " + getMarca() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+        System.out.println("[Tablet]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
                 + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nResolución: " + getResolucion() + "\nAccesorios: " + getAccesorios());
+    }
+
+    @Override
+    public String toString() {
+        return "[Tablet]\nMarca: " + getMarca() + "\nModelo: " + getModelo() + "\nRam: " + getRam() + " GBs" + "\nAlmacenamiento: " + getAlmacenamiento() + " GBs\nProcesador: "
+                + getProcesador() + "\nAño: " + getAño() + "\nPrecio: " + getPrecio() + "\nStock: " + getStock() + "\nResolución: " + getResolucion() + "\nAccesorios: " + getAccesorios();
     }
 }

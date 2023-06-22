@@ -1,13 +1,22 @@
 import java.util.ArrayList;
 public abstract class Dispositivo {
 	private String marca;
+	private String modelo;
 	private double ram;
 	private double almacenamiento;
 	private String procesador;
 	private int año;
 	private double precio;
 	private int stock;
+	private String tipo;
 
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
 
 	public String getMarca() {
 		return this.marca;
@@ -15,6 +24,14 @@ public abstract class Dispositivo {
 
 	public void setMarca(String marca) {
 		this.marca = marca;
+	}
+
+	public String getModelo() {
+		return modelo;
+	}
+
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
 	}
 
 	public double getRam() {
@@ -67,11 +84,4 @@ public abstract class Dispositivo {
 
 	public abstract void verTablaEspecificaciones();
 
-	public ArrayList<Object> buscarMarca(String marca) {
-		throw new UnsupportedOperationException();
-	}
-
-	public ArrayList<Object> buscarModeloTipo(String modelo, String tipo) {
-		throw new UnsupportedOperationException();
-	}
 }
